@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Rockit</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_trend">Trend</string>
+    <string name="nav_notif">Notification</string>
+    <string name="nav_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lipsum">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Proin congue,
+                    arcu sed imperdiet posuere, tellus urna ultrices justo,
+                    in dignissim neque justo et ligula. Fusce fringilla turpis vitae orci pellentesque,
+                    in luctus magna sodales. Cras porta suscipit metus et efficitur.
+                    Etiam imperdiet ipsum a massa vestibulum, eget pretium augue rhoncus.</string>
+</resources>

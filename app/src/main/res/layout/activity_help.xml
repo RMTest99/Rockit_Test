@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HelpActivity">
+
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/backbtn"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/getInTouch"
+        android:layout_below="@id/headerLayout"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Get in touch"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="24sp"
+            android:textColor="#646475"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_below="@+id/getInTouch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/emailRelativeLayout"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/emailTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email Address"
+                android:textSize="18sp"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto_light"/>
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/emailTV"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittextbg"
+                android:inputType="textEmailAddress" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fullNameRelativeLayout"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/userFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full Name"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto_light"/>
+
+            <EditText
+                android:id="@+id/firstNameEditText"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/userFullName"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittextbg"
+                android:inputType="textPersonName" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/messageRelativeLayout"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/userMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto_light"/>
+
+            <EditText
+                android:id="@+id/lastNameEditText"
+                android:layout_width="360dp"
+                android:layout_height="200dp"
+                android:padding="10dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="top"
+                android:textSize="16sp"
+                android:hint="Enter your message here"
+                android:layout_below="@id/userMessage"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittextbg"
+                android:inputType="textMultiLine" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/sendBtn"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btnbg"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto"
+            android:text="Send"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

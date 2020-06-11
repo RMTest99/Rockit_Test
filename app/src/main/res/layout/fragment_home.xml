@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.HomeFragment">
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:id="@+id/topNewReleases"
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:id="@+id/topNewReleasesHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top new releases"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#646475"/>
+
+            <TextView
+                android:id="@+id/newReleasesAll"
+                android:textColor="#0396FF"
+                android:layout_marginEnd="5dp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/roboto"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View All"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/productsList"
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/topNewReleasesHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/newReleaseRecyclerView"
+                android:overScrollMode="never"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:id="@+id/topCategories"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:id="@+id/categoriesHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Categories"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#646475"/>
+
+            <TextView
+                android:id="@+id/categoriesAll"
+                android:textColor="#0396FF"
+                android:layout_marginEnd="5dp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/roboto"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View All"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/categoriesList"
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/categoriesHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoriesRecyclerView"
+                android:overScrollMode="never"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:id="@+id/featuredProducts"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:id="@+id/featuredHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Featured Stores"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#646475"/>
+
+            <TextView
+                android:id="@+id/storesAll"
+                android:textColor="#0396FF"
+                android:layout_marginEnd="5dp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/roboto"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View All"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/featuredList"
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/featuredHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

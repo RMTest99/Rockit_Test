@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "39131290739",
+    "firebase_url": "https://rockittest-d595c.firebaseio.com",
+    "project_id": "rockittest-d595c",
+    "storage_bucket": "rockittest-d595c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39131290739:android:7a38f8d7af741796815e06",
+        "android_client_info": {
+          "package_name": "com.rajabmammadli.rockit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39131290739-oki32v0kkdscek7mrj8ltorf51napuau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rajabmammadli.rockit",
+            "certificate_hash": "d23133bc3ae15f3057f28ef3c5c99f44460955d0"
+          }
+        },
+        {
+          "client_id": "39131290739-hsljk121fcvi537l8a7vjta9624ff0qm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRGV8mmcXP2Xm3S4MCaMcBeDFxZ72aKY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39131290739-hsljk121fcvi537l8a7vjta9624ff0qm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
