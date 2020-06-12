@@ -2,6 +2,7 @@ package com.rajabmammadli.rockit.Fragments;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +24,8 @@ public class SearchFragment extends Fragment {
     ArrayList<SearchTagModel> searchTagModels;
     SearchTagAdapter searchTagAdapter;
 
+    SearchView searchView;
+
     public SearchFragment() {
         // Required empty public constructor
     }
@@ -36,6 +39,10 @@ public class SearchFragment extends Fragment {
         recyclerViewSearchTag = view.findViewById(R.id.recyclerViewSearchTag);
 
         String[] searchTag = {"Electronics", "Household", "Clothing", "Toys", "Books"};
+
+        searchView = view.findViewById(R.id.searchView);
+
+        searchView.setQueryHint("Search...");
 
         searchTagModels = new ArrayList<>();
         for (int i = 0; i < searchTag.length; i++) {

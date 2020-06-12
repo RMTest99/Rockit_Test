@@ -1,6 +1,5 @@
 package com.rajabmammadli.rockit.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,14 +13,19 @@ import android.view.ViewGroup;
 
 import com.rajabmammadli.rockit.Adapters.CategoryAdapter;
 import com.rajabmammadli.rockit.Adapters.NewReleaseAdapter;
+import com.rajabmammadli.rockit.Adapters.StoreAdapter;
 import com.rajabmammadli.rockit.Models.CategoryListModel;
 import com.rajabmammadli.rockit.Models.NewReleaseListModel;
-import com.rajabmammadli.rockit.ProductActivity;
+import com.rajabmammadli.rockit.Models.StoreListModel;
 import com.rajabmammadli.rockit.R;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
+
+    RecyclerView storesRecyclerView;
+    ArrayList<StoreListModel> storeListModels;
+    StoreAdapter storeAdapter;
 
     RecyclerView categoriesRecyclerView;
     ArrayList<CategoryListModel> categoryListModels;
@@ -43,6 +47,11 @@ public class HomeFragment extends Fragment {
 
         categoriesRecyclerView = view.findViewById(R.id.categoriesRecyclerView);
         newReleaseRecyclerView = view.findViewById(R.id.newReleaseRecyclerView);
+        storesRecyclerView = view.findViewById(R.id.storesRecyclerView);
+
+        //Stores data
+        Integer[] storesImage = {R.drawable.nikelogo, R.drawable.samsunglogo, R.drawable.reeboklogo, R.drawable.adidaslogo};
+        String[] storeMainName = {"Nike", "Samsung", "Reebok", "Adidas"};
 
         //Categories data
         Integer[] bgColor = {R.drawable.tshirtbg, R.drawable.householdbg, R.drawable.electronicsbg, R.drawable.booksbg};
@@ -54,6 +63,18 @@ public class HomeFragment extends Fragment {
         String[] storeName = {"Nike", "Benetton", "Scott J. Bintz", "Banker's Backyard", "Samsung"};
         String[] priceList = {"$135", "$42", "$24.99", "$8.99", "$1299.99"};
 
+        storeListModels = new ArrayList<>();
+        for (int i = 0; i < storeMainName.length; i++) {
+            StoreListModel model = new StoreListModel(storesImage[i], storeMainName[i]);
+            storeListModels.add(model);
+        }
+
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        storesRecyclerView.setLayoutManager(layoutManager2);
+        storesRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        storeAdapter = new StoreAdapter(storeListModels, getContext());
+        storesRecyclerView.setAdapter(storeAdapter);
 
         categoryListModels = new ArrayList<>();
         for (int i = 0; i < bgColor.length; i++) {
