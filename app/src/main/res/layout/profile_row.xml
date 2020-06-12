@@ -23,8 +23,8 @@
         android:id="@+id/right_icon"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:src="@drawable/rightarrow"/>
 
     </RelativeLayout>

@@ -39,6 +39,7 @@ import com.rajabmammadli.rockit.CompleteUserActivity;
 import com.rajabmammadli.rockit.FavoritesActivity;
 import com.rajabmammadli.rockit.FeedActivity;
 import com.rajabmammadli.rockit.HelpActivity;
+import com.rajabmammadli.rockit.OrderActivity;
 import com.rajabmammadli.rockit.ProductActivity;
 import com.rajabmammadli.rockit.R;
 
@@ -101,7 +102,8 @@ public class ProfileFragment extends Fragment {
                     startActivity(intent);
                 }
                 if (position == 1) {
-                    Toast.makeText(getContext(), "Order History", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), OrderActivity.class);
+                    startActivity(intent);
                 }
                 if (position == 2) {
                     Intent intent = new Intent(getContext(), FavoritesActivity.class);
