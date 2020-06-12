@@ -12,7 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.rajabmammadli.rockit.Adapters.CategoryAdapter;
+import com.rajabmammadli.rockit.Adapters.RecentAdapter;
+import com.rajabmammadli.rockit.Adapters.RecentViewedAdapter;
 import com.rajabmammadli.rockit.Adapters.SearchTagAdapter;
+import com.rajabmammadli.rockit.Models.RecentlyViewedModel;
 import com.rajabmammadli.rockit.Models.SearchTagModel;
 import com.rajabmammadli.rockit.R;
 
@@ -23,6 +27,10 @@ public class SearchFragment extends Fragment {
     RecyclerView recyclerViewSearchTag;
     ArrayList<SearchTagModel> searchTagModels;
     SearchTagAdapter searchTagAdapter;
+
+    RecyclerView recentlyViewedRecyclerView;
+    ArrayList<RecentlyViewedModel> recentlyViewedModels;
+    RecentViewedAdapter recentViewedAdapter;
 
     SearchView searchView;
 
@@ -37,12 +45,30 @@ public class SearchFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
         recyclerViewSearchTag = view.findViewById(R.id.recyclerViewSearchTag);
-
-        String[] searchTag = {"Electronics", "Household", "Clothing", "Toys", "Books"};
+        recentlyViewedRecyclerView = view.findViewById(R.id.recentlyViewedRecyclerView);
 
         searchView = view.findViewById(R.id.searchView);
-
         searchView.setQueryHint("Search...");
+
+        Integer[] recentBgImage = {R.drawable.tshirt, R.drawable.nikesneaker, R.drawable.book, R.drawable.samsungphone, R.drawable.honeybottle};
+        String[] recentProductName = {"Benetton T-Shirt", "Nike Sneaker", "Principles to Fortune", "Samsung S20+", "Pure Honey"};
+        String[] recentStoreName = {"Benetton", "Nike", "Scott J. Bintz", "Samsung", "Banker's Backyard"};
+        String[] recentPriceList = {"$42", "$135", "$24.99", "$1299.99", "$8.99"};
+
+        recentlyViewedModels = new ArrayList<>();
+        for (int i = 0; i < recentBgImage.length; i++) {
+            RecentlyViewedModel recentlyViewedModel = new RecentlyViewedModel(recentBgImage[i], recentProductName[i], recentStoreName[i], recentPriceList[i]);
+            recentlyViewedModels.add(recentlyViewedModel);
+        }
+
+        LinearLayoutManager layoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recentlyViewedRecyclerView.setLayoutManager(layoutManager1);
+        recentlyViewedRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        recentViewedAdapter = new RecentViewedAdapter(recentlyViewedModels, getContext());
+        recentlyViewedRecyclerView.setAdapter(recentViewedAdapter);
+
+        String[] searchTag = {"Electronics", "Household", "Clothing", "Toys", "Books"};
 
         searchTagModels = new ArrayList<>();
         for (int i = 0; i < searchTag.length; i++) {

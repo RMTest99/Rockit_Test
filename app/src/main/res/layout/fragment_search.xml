@@ -32,6 +32,120 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:id="@+id/recentlyViewed"
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:id="@+id/recentlyViewedHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recently Viewed"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="#646475"/>
+
+                <TextView
+                    android:id="@+id/recentlyViewedAll"
+                    android:textColor="#0396FF"
+                    android:layout_marginEnd="5dp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/roboto"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/recentlyViewedProductsList"
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_below="@+id/recentlyViewedHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recentlyViewedRecyclerView"
+                    android:overScrollMode="never"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:id="@+id/bestSeller"
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:id="@+id/bestSellerHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best Seller"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="#646475"/>
+
+                <TextView
+                    android:id="@+id/bestSellerViewedAll"
+                    android:textColor="#0396FF"
+                    android:layout_marginEnd="5dp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/roboto"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/bestSellerProductsList"
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_below="@+id/bestSellerHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bestSellerRecyclerView"
+                    android:overScrollMode="never"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
