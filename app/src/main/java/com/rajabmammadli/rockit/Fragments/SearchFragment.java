@@ -12,10 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.rajabmammadli.rockit.Adapters.CategoryAdapter;
-import com.rajabmammadli.rockit.Adapters.RecentAdapter;
+import com.rajabmammadli.rockit.Adapters.BestSellerAdapter;
 import com.rajabmammadli.rockit.Adapters.RecentViewedAdapter;
 import com.rajabmammadli.rockit.Adapters.SearchTagAdapter;
+import com.rajabmammadli.rockit.Models.BestSellerModel;
 import com.rajabmammadli.rockit.Models.RecentlyViewedModel;
 import com.rajabmammadli.rockit.Models.SearchTagModel;
 import com.rajabmammadli.rockit.R;
@@ -32,6 +32,10 @@ public class SearchFragment extends Fragment {
     ArrayList<RecentlyViewedModel> recentlyViewedModels;
     RecentViewedAdapter recentViewedAdapter;
 
+    RecyclerView bestSellerRecyclerView;
+    ArrayList<BestSellerModel> bestSellerModels;
+    BestSellerAdapter bestSellerAdapter;
+
     SearchView searchView;
 
     public SearchFragment() {
@@ -46,9 +50,28 @@ public class SearchFragment extends Fragment {
 
         recyclerViewSearchTag = view.findViewById(R.id.recyclerViewSearchTag);
         recentlyViewedRecyclerView = view.findViewById(R.id.recentlyViewedRecyclerView);
+        bestSellerRecyclerView = view.findViewById(R.id.bestSellerRecyclerView);
 
         searchView = view.findViewById(R.id.searchView);
         searchView.setQueryHint("Search...");
+
+        Integer[] bestSellerImage = {R.drawable.samsungphone, R.drawable.honeybottle, R.drawable.book, R.drawable.tshirt, R.drawable.nikesneaker};
+        String[] bestSellerProductName = {"Samsung S20+", "Pure Honey", "Principles to Fortune", "Benetton T-Shirt", "Nike Sneaker"};
+        String[] bestSellerStoreName = {"Samsung", "Banker's Backyard", "Scott J. Bintz", "Benetton", "Nike"};
+        String[] bestSellerPriceList = {"$1299.99", "$8.99", "$24.99", "$42", "$135"};
+
+        bestSellerModels = new ArrayList<>();
+        for (int i = 0; i < bestSellerImage.length; i++) {
+            BestSellerModel bestSellerModel = new BestSellerModel(bestSellerImage[i], bestSellerProductName[i], bestSellerStoreName[i], bestSellerPriceList[i]);
+            bestSellerModels.add(bestSellerModel);
+        }
+
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        bestSellerRecyclerView.setLayoutManager(layoutManager2);
+        bestSellerRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        bestSellerAdapter = new BestSellerAdapter(bestSellerModels, getContext());
+        bestSellerRecyclerView.setAdapter(bestSellerAdapter);
 
         Integer[] recentBgImage = {R.drawable.tshirt, R.drawable.nikesneaker, R.drawable.book, R.drawable.samsungphone, R.drawable.honeybottle};
         String[] recentProductName = {"Benetton T-Shirt", "Nike Sneaker", "Principles to Fortune", "Samsung S20+", "Pure Honey"};

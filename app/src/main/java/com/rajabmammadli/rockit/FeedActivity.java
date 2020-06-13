@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rajabmammadli.rockit.Fragments.HomeFragment;
-import com.rajabmammadli.rockit.Fragments.NotificationFragment;
+import com.rajabmammadli.rockit.Fragments.CartFragment;
 import com.rajabmammadli.rockit.Fragments.ProfileFragment;
 import com.rajabmammadli.rockit.Fragments.SearchFragment;
 import com.rajabmammadli.rockit.Fragments.TrendFragment;
@@ -31,7 +31,7 @@ public class FeedActivity extends AppCompatActivity {
     private HomeFragment homeFragment;
     private SearchFragment searchFragment;
     private TrendFragment trendFragment;
-    private NotificationFragment notificationFragment;
+    private CartFragment cartFragment;
     private ProfileFragment profileFragment;
 
     FirebaseDatabase firebaseDatabase;
@@ -55,7 +55,7 @@ public class FeedActivity extends AppCompatActivity {
         homeFragment = new HomeFragment();
         searchFragment = new SearchFragment();
         trendFragment = new TrendFragment();
-        notificationFragment = new NotificationFragment();
+        cartFragment = new CartFragment();
         profileFragment = new ProfileFragment();
 
         setFragment(homeFragment);
@@ -78,8 +78,8 @@ public class FeedActivity extends AppCompatActivity {
                         setFragment(trendFragment);
                         return true;
 
-                    case R.id.nav_notif :
-                        setFragment(notificationFragment);
+                    case R.id.nav_cart :
+                        setFragment(cartFragment);
                         return true;
 
                     case R.id.nav_profile :

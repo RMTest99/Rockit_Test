@@ -1,5 +1,6 @@
 package com.rajabmammadli.rockit.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,13 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.rajabmammadli.rockit.Adapters.CategoryAdapter;
 import com.rajabmammadli.rockit.Adapters.NewReleaseAdapter;
 import com.rajabmammadli.rockit.Adapters.StoreAdapter;
+import com.rajabmammadli.rockit.CategoryListActivity;
 import com.rajabmammadli.rockit.Models.CategoryListModel;
 import com.rajabmammadli.rockit.Models.NewReleaseListModel;
 import com.rajabmammadli.rockit.Models.StoreListModel;
+import com.rajabmammadli.rockit.OverviewActivity;
 import com.rajabmammadli.rockit.R;
 
 import java.util.ArrayList;
@@ -35,6 +39,9 @@ public class HomeFragment extends Fragment {
     ArrayList<NewReleaseListModel> newReleaseListModels;
     NewReleaseAdapter newReleaseAdapter;
 
+    TextView newReleasesAll;
+    TextView categoriesAll;
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -48,6 +55,25 @@ public class HomeFragment extends Fragment {
         categoriesRecyclerView = view.findViewById(R.id.categoriesRecyclerView);
         newReleaseRecyclerView = view.findViewById(R.id.newReleaseRecyclerView);
         storesRecyclerView = view.findViewById(R.id.storesRecyclerView);
+
+        newReleasesAll = view.findViewById(R.id.newReleasesAll);
+        categoriesAll = view.findViewById(R.id.categoriesAll);
+
+        categoriesAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), CategoryListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        newReleasesAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), OverviewActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //Stores data
         Integer[] storesImage = {R.drawable.nikelogo, R.drawable.samsunglogo, R.drawable.reeboklogo, R.drawable.adidaslogo};

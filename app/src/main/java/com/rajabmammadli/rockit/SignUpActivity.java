@@ -35,15 +35,13 @@ public class SignUpActivity extends AppCompatActivity {
     ImageButton backBtn, facebookBtn, googleBtn, twitterBtn;
     EditText editTextUsername, editTextEmail, editTextPassword;
     Button signUpBtn;
-    TextView loginBtn;
+    TextView loginBtn, forgotBtn;
 
     //Firebase
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +65,7 @@ public class SignUpActivity extends AppCompatActivity {
         //Buttons
         signUpBtn = findViewById(R.id.signUpBtn);
         loginBtn = findViewById(R.id.loginBtn);
+        forgotBtn = findViewById(R.id.forgotBtn);
 
         //Firebase
         firebaseAuth = FirebaseAuth.getInstance();
@@ -90,6 +89,15 @@ public class SignUpActivity extends AppCompatActivity {
                 Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        //Forgot Button Listener
+        forgotBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUpActivity.this, ResetActivity.class);
+                startActivity(intent);
             }
         });
 
