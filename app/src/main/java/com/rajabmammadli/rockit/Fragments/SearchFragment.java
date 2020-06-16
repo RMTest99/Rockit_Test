@@ -1,5 +1,6 @@
 package com.rajabmammadli.rockit.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.SearchView;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.rajabmammadli.rockit.Adapters.BestSellerAdapter;
 import com.rajabmammadli.rockit.Adapters.RecentViewedAdapter;
@@ -19,6 +21,7 @@ import com.rajabmammadli.rockit.Models.BestSellerModel;
 import com.rajabmammadli.rockit.Models.RecentlyViewedModel;
 import com.rajabmammadli.rockit.Models.SearchTagModel;
 import com.rajabmammadli.rockit.R;
+import com.rajabmammadli.rockit.SearchActivity;
 
 import java.util.ArrayList;
 
@@ -36,7 +39,7 @@ public class SearchFragment extends Fragment {
     ArrayList<BestSellerModel> bestSellerModels;
     BestSellerAdapter bestSellerAdapter;
 
-    SearchView searchView;
+    LinearLayout searchHeader;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -52,8 +55,16 @@ public class SearchFragment extends Fragment {
         recentlyViewedRecyclerView = view.findViewById(R.id.recentlyViewedRecyclerView);
         bestSellerRecyclerView = view.findViewById(R.id.bestSellerRecyclerView);
 
-        searchView = view.findViewById(R.id.searchView);
-        searchView.setQueryHint("Search...");
+        searchHeader = view.findViewById(R.id.searchHeader);
+
+        searchHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(0,0);
+            }
+        });
 
         Integer[] bestSellerImage = {R.drawable.samsungphone, R.drawable.honeybottle, R.drawable.book, R.drawable.tshirt, R.drawable.nikesneaker};
         String[] bestSellerProductName = {"Samsung S20+", "Pure Honey", "Principles to Fortune", "Benetton T-Shirt", "Nike Sneaker"};

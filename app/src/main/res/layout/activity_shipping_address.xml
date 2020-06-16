@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShippingAddressActivity">
+
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/backbtn"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:id="@+id/shippingAddressHeader"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shipping Address"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"
+                android:layout_marginStart="30dp"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/first_name"
+                android:layout_marginStart="37dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="First Name"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"/>
+
+            <EditText
+                android:id="@+id/firstNameEditText"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:inputType="textPersonName"
+                android:background="@drawable/shippingetbg"/>
+
+            <TextView
+                android:id="@+id/last_name"
+                android:layout_marginStart="37dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Last Name"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"/>
+
+            <EditText
+                android:id="@+id/lastNameEditText"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:inputType="textPersonName"
+                android:background="@drawable/shippingetbg"/>
+
+            <TextView
+                android:id="@+id/address_1"
+                android:layout_marginStart="37dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Address Line"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"/>
+
+            <EditText
+                android:id="@+id/addressEditText"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shippingetbg"/>
+
+            <TextView
+                android:id="@+id/address_2"
+                android:layout_marginStart="37dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Address Line 2"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"/>
+
+            <EditText
+                android:id="@+id/addressEditText2"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shippingetbg"/>
+
+            <TextView
+                android:id="@+id/country"
+                android:layout_marginStart="37dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Country"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"/>
+
+            <EditText
+                android:id="@+id/countryEditText"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shippingetbg"/>
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_marginStart="37dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="City"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"/>
+
+            <EditText
+                android:id="@+id/cityEditText"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shippingetbg"/>
+
+            <TextView
+                android:id="@+id/state"
+                android:layout_marginStart="37dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="State/Province"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"/>
+
+            <EditText
+                android:id="@+id/stateEditText"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shippingetbg"/>
+
+            <TextView
+                android:id="@+id/postCode"
+                android:layout_marginStart="37dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Post Code"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"/>
+
+            <EditText
+                android:id="@+id/postCodeEditText"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#646475"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shippingetbg"/>
+
+            <Button
+                android:id="@+id/continueBtn"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorWhite"
+                android:text="Continue"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/continuebtnbg"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -6,6 +6,18 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@color/colorBlue</item>
+
+        <item name="windowActionBar">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:actionBarStyle">@style/TrendActionBar</item>
+    </style>
+
+    <style name="TrendActionBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <style name="searchCursorColor" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
     </style>
 
 </resources>

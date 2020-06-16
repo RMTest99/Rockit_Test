@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/radioBtn"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:button="@drawable/radiobtnbg" />
+
+            <TextView
+                android:id="@+id/optionDesc"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option Description"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#646475"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/optionPrice"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:textAlignment="viewEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option Price"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#32CD77"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
+        
+    </RelativeLayout>
+
+</LinearLayout>

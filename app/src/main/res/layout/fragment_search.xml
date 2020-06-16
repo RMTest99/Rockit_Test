@@ -11,13 +11,29 @@
         android:layout_width="match_parent"
         android:layout_height="70dp">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
-            android:layout_width="350dp"
-            android:layout_height="50dp"
-            android:background="@drawable/searchbg"
+        <LinearLayout
+            android:id="@+id/searchHeader"
+            android:orientation="horizontal"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"/>
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageButton
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/searchicon"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginStart="20dp"
+                android:text="Search..."/>
+
+        </LinearLayout>
 
     </RelativeLayout>
 

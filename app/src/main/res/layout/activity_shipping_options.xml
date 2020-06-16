@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShippingOptionsActivity">
+
+    <RelativeLayout
+    android:id="@+id/headerLayout"
+    android:overScrollMode="never"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/backbtn"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:id="@+id/shippingAddressHeader"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shipping Options"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="#646475"
+            android:layout_marginStart="30dp"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@id/headerLayout"
+        android:layout_above="@id/bottomBtn"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shippingOptionRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <Button
+            android:id="@+id/continueBtn"
+            android:layout_centerVertical="true"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto_light"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/continuebtnbg"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
