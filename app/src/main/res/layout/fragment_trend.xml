@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/colorWhite"
     tools:context=".Fragments.TrendFragment">
@@ -11,6 +11,153 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:id="@+id/toolbar"/>
+        android:id="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/filterBtn"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filtericon"
+                android:background="@android:color/transparent"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/trendingTodayMain"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="350dp">
+
+                <RelativeLayout
+                    android:padding="10dp"
+                    android:id="@+id/trendingTodayHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trending today"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textColor="#646475"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/trendingProductsList"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/trendingTodayHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/trendingTodayRecyclerView"
+                        android:overScrollMode="never"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/recommendationMain"
+                android:padding="10dp"
+                android:layout_below="@id/trendingTodayMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_centerHorizontal="true"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    android:layout_marginEnd="10dp">
+
+                    <ImageView
+                        android:src="@drawable/offerphoto"
+                        android:scaleType="centerCrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/popularProductsMain"
+                android:layout_below="@+id/recommendationMain"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="350dp">
+
+                <RelativeLayout
+                    android:padding="10dp"
+                    android:id="@+id/popularProductsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Popular Products"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textColor="#646475"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/popularProductsList"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/popularProductsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/popularProductsRecyclerView"
+                        android:overScrollMode="never"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>

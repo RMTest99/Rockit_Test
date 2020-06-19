@@ -22,6 +22,7 @@ import com.rajabmammadli.rockit.Models.NewReleaseListModel;
 import com.rajabmammadli.rockit.Models.StoreListModel;
 import com.rajabmammadli.rockit.OverviewActivity;
 import com.rajabmammadli.rockit.R;
+import com.rajabmammadli.rockit.StoreAllActivity;
 
 import java.util.ArrayList;
 
@@ -41,6 +42,7 @@ public class HomeFragment extends Fragment {
 
     TextView newReleasesAll;
     TextView categoriesAll;
+    TextView storesAll;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -58,6 +60,15 @@ public class HomeFragment extends Fragment {
 
         newReleasesAll = view.findViewById(R.id.newReleasesAll);
         categoriesAll = view.findViewById(R.id.categoriesAll);
+        storesAll = view.findViewById(R.id.storesAll);
+
+        storesAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), StoreAllActivity.class);
+                startActivity(intent);
+            }
+        });
 
         categoriesAll.setOnClickListener(new View.OnClickListener() {
             @Override

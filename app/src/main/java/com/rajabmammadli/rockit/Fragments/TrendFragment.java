@@ -1,5 +1,6 @@
 package com.rajabmammadli.rockit.Fragments;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,10 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -33,15 +38,30 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerImageLoader;
-import com.mikepenz.materialize.holder.ImageHolder;
+import com.rajabmammadli.rockit.Adapters.PopularProductAdapter;
+import com.rajabmammadli.rockit.Adapters.TrendingAdapter;
+import com.rajabmammadli.rockit.FilterActivity;
+import com.rajabmammadli.rockit.Models.PopularProductModel;
+import com.rajabmammadli.rockit.Models.TrendingModel;
 import com.rajabmammadli.rockit.R;
-import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 public class TrendFragment extends Fragment {
 
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     FirebaseUser firebaseUser;
+
+    RecyclerView trendingTodayRecyclerView;
+    ArrayList<TrendingModel> trendingModelArrayList;
+    TrendingAdapter trendingAdapter;
+
+    RecyclerView popularProductsRecyclerView;
+    ArrayList<PopularProductModel> popularProductModelArrayList;
+    PopularProductAdapter popularProductAdapter;
+
+    ImageButton filterBtn;
 
     public TrendFragment() {
         // Required empty public constructor
@@ -57,7 +77,58 @@ public class TrendFragment extends Fragment {
         firebaseUser = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
+        filterBtn = view.findViewById(R.id.filterBtn);
+
+        filterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), FilterActivity.class);
+                startActivity(intent);
+            }
+        });
+
         String userEmail = firebaseUser.getEmail();
+
+        trendingTodayRecyclerView = view.findViewById(R.id.trendingTodayRecyclerView);
+        popularProductsRecyclerView = view.findViewById(R.id.popularProductsRecyclerView);
+
+        //Popular products data
+        Integer[] popularProductImage = {R.drawable.tshirt, R.drawable.nikesneaker, R.drawable.samsungphone, R.drawable.honeybottle, R.drawable.book};
+        String[] popularProductName = {"Benetton T-Shirt", "Nike Sneaker", "Samsung S20+", "Pure Honey", "Principles to Fortune"};
+        String[] popularStoreName = {"Benetton", "Nike", "Samsung", "Banker's Backyard", "Scott J. Bintz"};
+        String[] popularPriceList = {"$42", "$135", "$1299.99", "$8.99", "$24.99"};
+
+        popularProductModelArrayList = new ArrayList<>();
+        for (int i = 0; i < popularProductImage.length; i++) {
+            PopularProductModel model = new PopularProductModel(popularProductImage[i], popularProductName[i], popularStoreName[i], popularPriceList[i]);
+            popularProductModelArrayList.add(model);
+        }
+
+        LinearLayoutManager layoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        popularProductsRecyclerView.setLayoutManager(layoutManager1);
+        popularProductsRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        popularProductAdapter = new PopularProductAdapter(popularProductModelArrayList, getContext());
+        popularProductsRecyclerView.setAdapter(popularProductAdapter);
+
+        //Trend data
+        Integer[] productImage = {R.drawable.nikesneaker, R.drawable.tshirt, R.drawable.book, R.drawable.honeybottle, R.drawable.samsungphone};
+        String[] productName = {"Nike Sneaker", "Benetton T-Shirt", "Principles to Fortune", "Pure Honey", "Samsung S20+"};
+        String[] storeName = {"Nike", "Benetton", "Scott J. Bintz", "Banker's Backyard", "Samsung"};
+        String[] priceList = {"$135", "$42", "$24.99", "$8.99", "$1299.99"};
+
+        trendingModelArrayList = new ArrayList<>();
+        for (int i = 0; i < productImage.length; i++) {
+            TrendingModel model = new TrendingModel(productImage[i], productName[i], storeName[i], priceList[i]);
+            trendingModelArrayList.add(model);
+        }
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        trendingTodayRecyclerView.setLayoutManager(layoutManager);
+        trendingTodayRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        trendingAdapter = new TrendingAdapter(trendingModelArrayList, getContext());
+        trendingTodayRecyclerView.setAdapter(trendingAdapter);
 
         databaseReference.orderByChild("userEmail").equalTo(userEmail).addValueEventListener(new ValueEventListener() {
             @Override
